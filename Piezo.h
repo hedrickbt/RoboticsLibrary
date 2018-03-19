@@ -229,11 +229,9 @@ public:
 
   
   void starWarsTheme() {
-     int noteDuration = 10000 / swbeats1[noteCount];     
-     buzz(piezoPin, swmelody1[noteCount],noteDuration);
-           
-     changeFrequency = millis() + (noteDuration * 1.30); 
-       
+     int noteDuration = 1000 / swbeats1[noteCount];     
+     buzz(piezoPin, swmelody1[noteCount],noteDuration);          
+     changeFrequency = millis() + (noteDuration * 1.30);        
      noteCount = noteCount + 1;
      if (noteCount == 36) { // Last note has been played
         Serial.println ( "Done with Star Wars Theme" );
@@ -324,7 +322,9 @@ public:
           break;
           
         case 7: // Star Wars Theme
-          starWarsTheme();
+          if (millis() > changeFrequency) {
+             starWarsTheme();
+          }   
           break;          
        
         default:        
@@ -429,12 +429,12 @@ private:
 		NOTE_F5, 0, NOTE_C5, 0, NOTE_A4, 0
 	};
     int swbeats1[36]  = {  
-		50, 20, 50, 20, 50, 20, 
-		40, 5, 20, 5,  60, 10, 
-		40, 5, 20, 5, 60, 80, 
-		50, 20, 50, 20, 50, 20, 
-		40, 5, 20, 5,  60, 10, 
-		40, 5,  20, 5, 60, 40
+		6,  10, 6,  10, 6,  10, 
+		10, 10, 20, 10, 6, 10, 
+		10, 10, 20, 10, 3, 10, 
+		6,  10, 6, 10, 6, 10, 
+		10, 10, 20,  10, 6, 10, 
+		10, 10, 20,  10, 3, 10
 	};
      
     // Melody 2: Star Wars Theme
