@@ -5,4 +5,11 @@ project located:https://sites.google.com/site/simplearduinocircuits/home
 <br>
 Any comments can be sent to Paul Richards: paulware@hotmail.com 
 # RoboticsLibrary
-aas
+<br>
+Features<br>
+<ul>
+<li>GPIO</li>
+<li>H-Bridge</li>
+<li>Piezo</li>
+<li>Pixels</li>
+</ul>
