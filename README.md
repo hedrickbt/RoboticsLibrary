@@ -13,3 +13,8 @@ Features<br>
 <li>Piezo</li>
 <li>Pixels</li>
 </ul>
+<br>
+Included Projects<br>
+<ul>
+<li>https://github.com/Simsso/Shift-Register-74HC595-Arduino-Library</li>
+</ul>
