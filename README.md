@@ -1,6 +1,12 @@
-
-This library is used by the Arduino blockly project located here: https://github.com/Paulware/ArduinoBlockly  which is also used by the Arduino Circuits 
-project located:https://sites.google.com/site/simplearduinocircuits/home
+Setup:<br>
+   <ul>
+   <li>Download the Arduino IDE from https://www.arduino.cc/en/Main/Software</li>
+   <li>Copy the RoboticsLibrary directory to your Arduino/libraries directory<Br>
+       The Arduino libraries directory is usually located in the Documents/Arduino directory</li>
+   <li>Use the Blockly library located: https://github.com/hedrickbt/ClrBlockly to create projects</li>
+   <li>Copy the code generated from the blockly project into the arduino ide</li>
+   <li>Compile and upload the code to your Arduino</li>
+   </ul>
 
 <br>
 Any comments can be sent to Paul Richards: paulware@hotmail.com 
@@ -18,3 +24,5 @@ Included Projects<br>
 <ul>
 <li>https://github.com/Simsso/Shift-Register-74HC595-Arduino-Library</li>
 </ul>
+
+
