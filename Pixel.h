@@ -13,15 +13,23 @@ public:
   int number = 0;
 
   Pixel (uint8_t pin, int numPixels, int txRate) {
+    init(pin, numPixels, txRate, NEO_GRB);
+  }; 
+  
+  Pixel (uint8_t pin, int numPixels, int txRate, int colorOrder) {
+    init(pin, numPixels, txRate, colorOrder);
+  }; 
+
+  void init (uint8_t pin, int numPixels, int txRate, int colorOrder) {
     TXRATE = txRate;
     totalPixels = numPixels;
     number = numPixels; 
-    pixels = Adafruit_NeoPixel(numPixels, pin, NEO_GRB + NEO_KHZ800);    
+    pixels = Adafruit_NeoPixel(numPixels, pin, colorOrder + NEO_KHZ800);    
     pixels.begin();    
     pixels.setBrightness (80);    
     timeout = 1;
   }; 
-  
+
   void plus() {
     if (number < totalPixels) {
        number = number + 1;
@@ -50,11 +58,11 @@ public:
     scanning = false;
   }
   
-  void green () {
+  void red () {
      color = 0;
   }
   
-  void red() {
+  void green() {
      color = 1;
   }
   
@@ -62,22 +70,22 @@ public:
      color = 2;
   } 
   
-  void selectPixel (int which, int grb ) {
-    int green = 0;
+  void selectPixel (int which, int rgb ) {
     int red = 0;
+    int green = 0;
     int blue = 0;
-    switch (grb) {
+    switch (rgb) {
        case 0: 
-         green = 250;
+         red = 250;
          break;
        case 1:
-         red = 250;
+         green = 250;
          break;
        case 2:
          blue = 250;
          break;          
     }
-    pixels.setPixelColor (which,pixels.Color (green,red,blue));                
+    pixels.setPixelColor (which,pixels.Color (red,green,blue));                
   }
     
   void selectOne () {
@@ -96,12 +104,12 @@ public:
     blinking = false;
   }
     
-  void setPixels (int grb) {
+  void setPixels (int rgb) {
     for (int i=0; i<totalPixels; i++) {
        selectPixel (i,-1);
     }          
     for (int i=0; i<number; i++) {
-       selectPixel (i,grb);
+       selectPixel (i,rgb);
     }   
     
     pixels.show();
