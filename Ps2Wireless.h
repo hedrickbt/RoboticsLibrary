@@ -108,11 +108,14 @@ class Ps2Wireless
       lastTriangleButton = triangleButton;
       newLeft = "";
       newRight = "";
-      newFire = "";
+      newFire           = "";
+      newXButton        = "";
       newX = "";
       newXR = "";
       newYR = "";
       newY = "";
+      newCircleButton   = "";
+      newSquareButton   = "";
       newTriangleButton = "";
       
       if (timeout) { 
